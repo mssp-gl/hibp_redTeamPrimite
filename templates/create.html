@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} is your email pwned {% endblock %}</h1>
+    <form method="post">
+
+
+        <label for="content">Check your email</label>
+        <br>
+        <textarea name="content"
+                  placeholder="email"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
