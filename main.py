@@ -12,8 +12,6 @@ import requests
 response = ["https://2ip.ru/?area=ajaxHaveIBeenPwned&query=", "https://api.snusbase.com/combo/antipublic/"]
 response[0] = requests.get(f"{response[0]}"f"{email}")
 print(response[0])
-
-
 '''
 
 import json
@@ -41,7 +39,6 @@ def create():
         content = content.strip()
         emaill = request.form['content']
         response.append(requests.get(f'https://2ip.ru/?area=ajaxHaveIBeenPwned&query={content}'))
-        response.append(requests.get(f'https://api.snusbase.com/combo/antipublic/{content}'))
         if not content:
             flash('Content is required!')
         else:
@@ -57,18 +54,3 @@ def create():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
-
-
-
-
-
-'''import json
-dict1={}
-
-json_object = json.dumps(response, indent=4)
-
-
-out_file = open("myfile.json", "w")
-json.dumps(response, out_file, indent=2)'''
